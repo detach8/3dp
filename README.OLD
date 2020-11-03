@@ -1,0 +1,440 @@
+-------------------------------------------------------------------------------------------
+
+            3 D P   S I M P L E   3  D   W I R E F R A M E   R E N D E R E R
+                                     by Lee Ting Zien
+
+                                Readme file for version 2.11
+
+-------------------------------------------------------------------------------------------
+
+TABLE OF CONTENTS
+==================
+  1. About the program
+     1.1. Introduction
+     1.2. Platforms
+     1.3. Performance
+  2. Known issues
+     2.1. Version information
+     2.2. Bugs
+     2.3. Wish list
+  3. Registration
+     3.1. Licences
+  4. Troubleshooting
+     4.1. Problems
+     4.2. Errors
+  5. Legal Issues
+     5.1. Terms and conditions of use
+     5.2. Copyright information/Credits
+  6. Contact
+     6.1. Post
+     6.2. E-mail
+     6.3. Homepage
+
+  *** Contents in this file is subjected to change without prior notice.
+
+
+
+-------------------------------------------------------------------------------------------
+
+1.1. INTRODUCTION
+==================
+
+  This is a simple 3D wireframe renderer designed by myself, with no other external sources
+  of help except for the Turbo Pascal video library/drivers.
+
+  Files included are:-
+
+    3DP.EXE        - The 3D wireframe renderer software itself!
+
+    3DPMAKER.EXE   - DOS mode 3DP object file maker to ease creation of 3D files.
+                     (Still under development.)
+
+    3DPGMAKE.EXE   - GUI version of 3DPMAKER, and with the X-Y, X-Z and Y-Z axis views.
+                     Ability to use the mouse, etc. (Still under SERIOUS development!!!)
+
+    3DPREG.EXE     - Registration key maker, which, unfortunately, only I have it. :P
+
+    PALLETTE.EXE   - 256 color pallette listing. (Works at 800x600x256.)
+
+    UNIVESA.EXE    - Run this file if you experience display problems.
+
+    3DPVESA.BAT   - A file to aid running UNIVESA.EXE and 3DP.EXE.
+
+    3DP.INI        - The configuration file for the renderer.
+
+    LOGO.DAT       - The text logo of 3DP. (Do NOT delete!)
+
+    REG.DAT        - Registration data file. If you software izn't registered, this file
+                     won't exist.
+
+    README.TXT     - THIS FILE.
+
+    *.3DP          - 3D object data files. These are text files and can be opened and
+                     edited by Windows Notepad or any other text editors. (NOTE: Do NOT
+                     use *NIX editors. The way they denote a new line is different from
+                     how DOS/Windows denotes it.)
+      LOGO.3DP ....... 3DP's logo in 3D!
+      TEST.3DP ....... Test 3D object data file. Inside this file is the instructions to
+                       the santax of the 3D object data file.
+      CUBE.3DP ....... Simple cube. This is to test max. performance of the software.
+      AXIS.3DP ....... Learn about the 3 primary axis. Example of text also in this file.
+                       It sounds abit educational tho. :P
+      LIVING.3DP ..... A 3D world of a living room designed by me. =)
+
+    *.FNT          - Font files for use in graphics mode.
+      DEFAULT.FNT .... The default font for text in graphics mode. (Do NOT delete!)
+      ARIAL.FNT ...... A font almost similar to the Arial font in Windows.
+      BOLD.FNT ....... A boldtype font.
+      COMPUTER.FNT ... The same font used in ICR for checques, etc..
+      STENCIL.FNT .... A stencil-like font.
+
+
+              
+
+
+1.2. PLATFORMS
+===============
+
+  This program has problems in Windows NT 4.0. I have not tested Windows 2000 yet but I
+  HOPE that it will work though. If any of you are using Windows 2000, please let me know
+  if the program works. Remember to read the TROUBLESHOOTING section on "Funny display"
+  before you start.
+
+  Platforms that SHOULD work are:-
+    * MS-DOS 6.22 and above
+    * Microsoft Windows 95
+    * Microsoft Windows 98
+    * Any other DOS-based O/S
+
+  IF you are using Windows NT 4.0, sad to say, you'll have to edit 3DP.INI and change
+  SetVideoMode to 1 (320x240) and define centers at 160, 120. It should run really fast
+  though, just that it looks crappy.
+
+
+
+
+1.3. PERFORMANCE
+=================
+
+  Performance impact on the software due to resolution izn't really great, therefore I
+  advise you to use the highest resolution possible so that there is ample space to move
+  around.
+
+  Using text in the object file will hinder performance greatly, so use them wisely.
+  A few ways of using texts are as labels and/or notes. The text do not shrink/warp or
+  turn together with your object, and they are always in a straight line of constant
+  length, so it's no point making those text part of your object. They are ment to help
+  in the object.
+
+  Large 3D objects with many polygons/lines will definately slow the program down.
+  Sometimes, check through your data files to find any overlapping lines, or double
+  copies of the same tags. Removing a few of these might cause the software to improve
+  quite abit!
+
+  If your object is small, play around with the FPS using the PAGEUP and PAGEDOWN keys
+  to get the best refresh rate.
+
+  To view things in detail, hit "P" instead of straining your eyes at a flickering line
+  at 1.8X zoom. :P
+
+  Ultimately, it all boils down to me being able to implement page flipping or not.
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+2.1. VERSION INFORMATION
+=========================
+  Version 2.12
+    Text browser "text length exceeds window width" clipping problem fixed. Lines has
+    been made to restrict within window width.
+    Text browser algorithm improved - no extra redundant redrawing needed for unknown
+    keys.
+    Text browser window graphics improved.
+    Added acknowledgement to README.TXT for the video libaries. (See section on CREDITS.)
+    Included PALLETTE.EXE for users who want fancyful colours. The PALLETE.EXE will
+    list the whole of the 256 color pallette in 800x600x256.
+    
+  Version 2.11
+    HELP window looks better - with titlebar and all.
+    "R" key views README.TXT (Part of the built-in text browser function.)
+
+  Version 2.10
+    Fixed bug which dosen't redraw the copyright information after the PAUSE window
+    dissappears.
+    Help is now working!
+    Improved HELP window drawing algorithm.
+
+  Version 2.01
+    3D version of 3DP's logo! LOGO.3DP :)
+    Ability to add text to 3D object file using "T <X> <Y> <Z> <Color> <Text>"
+
+  Version 1.9
+    FPS changeble via PGUP and PGDN keys. Good for trial and error FPS configurations
+    for the best refresh rates. This won't help huge objects/worlds tho.
+
+  Version 1.8
+    Improved algorithm to redraw text only when necessary to increase rendering speed.
+    Changed default wireframe colour. :)
+    Made the "UNREGISTERED VERSION" word flashing to make it more annoying.
+
+  Version 1.7
+    Added registration ability. (Aww, for those who didn't get the earlier versions.)
+    Added key input status display. (Colour change, pause, zoom, etc..)
+
+  Version 1.6
+    Added colour change function.
+
+  Version 1.5
+    Added frame pause function.
+
+  Version 1.4
+    Added Z axis rotate function.
+
+  Version 1.3
+    Added instructions page.
+
+  Older versions
+    Heh, I didn't make a documentation during the initial stages of this program, so
+    they aren't tracked, but I remembered that I removed the translation function 'cos
+    they serve no purpose.
+
+    Bad programming practice eh? No program flowchart either! :P
+
+
+
+
+2.2. BUGS
+==========
+
+  Clipping occurs when a line goes out of the side of the screen. This is a bug in the
+  video driver itself.
+
+  DOWN ARROW key actives the PAUSE command (Same as hitting "P".) Just lazy to add a few
+  lines of code to elimate this, that's all. :P Since DOWN ARROW serves no purpose at
+  this very monent, I'll let it be the extra key for the pause function.
+
+
+
+
+2.3. WISH LIST
+===============
+
+  Here are some features which I (and others) who'd like to have in the software:-
+
+  * Automatic animation 3D object file with extentions .3DA. :)
+  * GUI 3D file editor/maker. (IN PROCESS!!!)
+  * More windows-like look.
+  * Page flipping!!!
+
+  Thanks to all who wrote in with suggestions. :) Any more suggestions can be sent
+  to me via e-mail at detach8@hotmail.com.
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+3. REGISTRATION
+================
+
+  Usage of this program is free for all home and office users, but it might be worth
+  registering if you are going to use this for commercial presentation purposes, as it
+  would also include tools to ease your 3D file creation.
+
+  Send me US $9.90 (by checque ONLY) if you think my effort is worth being paid for, and
+  also getting that darn "UNREGISTERED VERSION" word away from your 3D object. :)
+
+  The address is:-
+
+    Lee Ting Zien
+
+    *** REDACTED ***
+    Singapore
+
+
+
+
+3.1. LICENCES
+==============
+
+  Do note that EACH registration file goes by PER USER basis, i.e. each person using the
+  registered copy of the software must own a copy of the licence to use the registered
+  software. (See section 5.1 for terms and conditions of use.)
+
+  If you need a commercial licence involving huge numbers, you can e-mail me for a request
+  and I'll see about that. :)
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+4.1. TROUBLESHOOTING - PROBLEMS
+================================
+
+  I SEE NOTHING!
+    If the gets stuck after you hit ENTER, try hitting ALT+ENTER to enter full screen mode
+    if you aren't already there.
+
+
+  STUCK AFTER HITTING ENTER! BLANK SCREEN/MESSY SCREEN!
+    If you are stuck at a blank screen in full screen mode, simply hit ESC, then hit Y to
+    quit the program. You may need to turn your monitor off and on again. Reboot only at
+    the last resort. Try running UNIVESA.EXE before running your program. I have included
+    a batch file called 3DPVESA.BAT. You can run that file to aid you.
+
+
+  FLICKERS
+    If you object is huge (e.g. A room, a large sphere), you'll have no choice but to edit
+    3DP.INI and change SetMaxFPS to 0 and put up with the flicker.If your object is small,
+    change SetMaxFPS to somewhere around 75 or so. Use the PGUP and PGDN keys while in the
+    program and find the best FPS.
+
+
+  SLOW!!!
+    If the program runs slowly, it may be your system configuration or the configuration of
+    the file 3DP.INI. If you system is slower than 100MHz, then forget about it. If your
+    system is faster than that, try finding the section on SetMaxFPS and modifying the
+    values in a trial-and-error style. Version 1.9 allows using the PGUP and PGDN keys to
+    control FPS dynamically. This may be quite useful too.
+
+
+  OBJECT SPINS NON STOP
+    You haven't installed your mouse driver yet. If you are running under full MS-DOS
+    mode, remember to download the mouse driver and enable it. If you are using Windows
+    9x, the mouse driver that came with windows should work.
+
+
+
+
+4.2. TROUBLESHOOTING - ERRORS
+==============================
+
+  Integer divide by zero error
+  Some internal calculation went b00m. An attempt to divide integer value by zero (which
+  is supposed to give you the answer of infinate, but the computer returns an error) has
+  occured. If you happen to set anything to zero, try changing it to 1.
+
+  Runtime error
+  Copy down the last few lines which was displayed before the runtime error occured, then
+  send me an e-mail, pasting the last 5 to 8 lines before the error appeared inside the
+  mail. If you accidentally deleted any file, or you edited any of the original files,
+  try downloading the software again, or checking your file for errors. (Usually the
+  3D object file.)
+
+  Overflows
+  It is either your O/S is unstable, you have not enough memory, your object file is too
+  big, or my program has a bug. Just send me an e-mail and some information about how the
+  error appeared, how to produce it, the last few lines of text on the screen, etc..
+
+
+  Thanks to all who give me feedback. For my e-mail, refer to section 6.
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+5.1. TERMS AND CONDITIONS OF USE
+=================================
+
+  3DP is free for PERSONAL and/or COMMERCIAL use. If you would like to licence the
+  software for any commercial purposes, please refer to section 3. The type of license
+  (and subsequent cost) will vary with the purchaser, but will entitle you to unlimited
+  use of your copy of 3DP, will support work on future versions, new features and bug
+  fixes, and will provide you with technical support via email.
+
+    5.1.1. 3DP is provided AS IS without warranty of any kind, either express or implied,
+           including but not limited to the implied warranties of merchantability and
+           fitness for a particular purpose. In no event shall the author be liable for
+           any damages whatsoever including direct, indirect, incidental, consequential,
+           loss of business profits or special damages, even if the author have been
+           advised of the possibility of such damages.
+
+    5.1.2. In an event of virus infection, the author and/or distributor shall not be held
+           responsible in any way. The author and/or distributors have made an effort to
+           ensure that the program is virus free, and it is on the user's part to scan for
+           any virus infections before executing the software(s) contained within this
+           package.
+
+    5.1.3. The user shall not temper with the binary file(s) distributed within this
+           package without prior permission from the author, including modifying the logo
+           file(s), unless for personal purposes ONLY.
+
+    5.1.4. The user shall not distribute the registration data file to other users
+           illegally. (See section 3.)
+
+    5.1.5. Contents of this file and any other file within this software package is
+           subjected to change without prior notice.
+
+    5.1.6. If you would like to distribute 3DP as part of a shareware distribution,
+           magazine, internet book, CD ROM, etc. contact the author for permission.
+
+    5.1.7. 3DP may only be distributed in the original distribution install file as
+           distributed by the author or distributor. The distribution install file may not
+           have files added to it or removed from it, and none of its contents may be
+           modified, decompiled, or reverse engineered.
+
+    5.1.8. 3DP may be freely distributed subject to, but not limited to, the following
+           terms: 3DP may not be sold or resold, distributed as a part of any package,
+           commercial or otherwise, used in a commercial environment, used or distributed
+           in support of a commercial service, or used or distributed to support any kind
+           of profit-generating activity, even if it is being distributed freely.
+
+  By agreeing with this license, you agree that YOU the user will by libel for any misuse
+  of this program. 
+
+
+5.2. COPYRIGHT INFORMATION/CREDITS
+===================================
+
+  The complete source code of the software(s) include within this package is property of
+  the author himself, and permission should be seeked should one need to obtain and/or
+  modify the code. The author reserves the rights to modify, add, remove or cripple the
+  functions in the software without prior notice.
+
+  All 3D object files are properties of their respective owners, and will be indicated
+  within the file itself. If the file does not include any names, then the file may be
+  distributed as FREEWARE.
+
+  The video libaries used for this program are are copyright 1995, 1996 by Jou-Nan Chen,
+  Taiwan, Republic Of China. You can contact at saint@snoopy.ncku.edu.tw or at
+  m8301544@china8.chpi.edu.tw.
+
+  All other materials contained within this software package are properties of their
+  respective owners.
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+6. CONTACT
+===========
+
+  6.1. By post - Send in registration, software, etc.. The address is:-
+
+         +--------------------+
+         |                    |
+         | Lee Ting Zien      |
+         |                    |
+         | **** REDACTED **** |
+         | Singapore          |
+         |                    |
+         +--------------------+
+
+  6.2. By e-mail - Send in suggestions, etc.. The address is:-
+
+         +-------------------------------------+
+         | Lee Ting Zien <detach8@hotmail.com> |
+         +-------------------------------------+
+
+
+  6.3. Also, do visit my homepage at http://www.detach.dhs.org/.
+
+
+
+-------------------------------------------------------------------------------------------
+END OF FILE

@@ -1,0 +1,58 @@
+#
+# 3DP Help data file
+#
+# '#' as first character of a line denotes a comment
+# '!' as first character of a line denotes a tag
+#
+
+!align L
+!color 0
+!line 1
+3DP Help File
+
+!align R
+!color 7
+!line 1
+$version
+
+!align L
+!line 3
+
+!color 0
+Mouse Controls
+!color 8
+  Left/Right: Rotate object about the Y axis.
+  Up/Down: Rotate object about the X axis.
+
+
+!color 0
+Key Controls
+!color 8
+  Page Up/Page Down: Increase/decrease refresh rate (FPS).
+  +/-: Zoom in and out.
+  ESC: Quit/close current window.
+  P: Pause current frame.
+  C: Change a random colour.
+  R: View README.TXT file.
+
+
+!color 0
+Mouse + Key controls
+!color 8
+  SPACE + Left/Right: Rotate object about the Z axis.
+
+
+!color 0
+Abbreviations and Terms
+!color 8
+  A "+" sign means to hold down the key while doing the action.
+  E.g. CTRL + C, means to hold down the "CTRL" key and press "C".
+
+  A "/" means OR. For example, Left/Right means left OR right.
+
+  The "X axis" is the horizontal axis.
+  The "Y axis" is the vertical axis.
+  The "Z axis" is the depth axis.
+
+!color 7
+Copyright(c) 1999, Lee Ting Zien. All Rights Reserved.

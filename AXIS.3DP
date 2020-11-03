@@ -1,0 +1,31 @@
+# X Y Z axis demo
+
+M -200 0 0
+D 200 0 0
+
+M 0 -200 0
+D 0 200 0
+
+M 0 0 -200
+D 0 0 200
+
+T -200 10 0 14 (-200) X
+T 180 10 0 14 (+200) X
+T 2 -192 0 12 (-200) Y
+T 2 192 0 12 (+200) Y
+T -10 0 -200 11 (-200) Z
+T -10 0 200 11 (+200) Z
+
+T 10 -170 10 15 Here is a chance to rotate these axis about!
+T 10 -150 10 13 Move your mouse left and right to rotate
+T 10 -140 10 13 about the Y axis
+T 10 -125 10 13 Move your mouse up and down to rotate
+T 10 -115 10 13 about the X axis
+T 10 -100 10 13 Hold SPACE and move your mouse left and
+T 10 -90 10 13 right to rotate about the Z axis
+T 10 -70 10 7 The X axis increases from left to right,
+T 10 -60 10 7 and lies horizontally on a vertical plane.
+T 10 -45 10 7 The Y axis increases from top to bottom,
+T 10 -35 10 7 and lies vertically, perpendicular to the X axis.
+T 10 -20 10 7 The Z axis increases from far to near,
+T 10 -10 10 7 and is perpendicular to both X and Y axis.
